@@ -92,7 +92,7 @@ public class ArrayBasedStack<T> implements Stack<T> {
 
   @Override
   public T pop() throws Exception {
-    return this.peek();
+    return this.get();
   } // pop
 
 } // ArrayBasedStack<T>
