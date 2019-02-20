@@ -51,7 +51,7 @@ public class LinkedQueue<T> implements Queue<T> {
   } // isFull()
 
   @Override
-  public T peek() {
+  public T peek() throws Exception {
     return this.front.value;
   } // peek()
 
