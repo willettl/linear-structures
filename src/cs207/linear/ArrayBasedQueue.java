@@ -37,13 +37,12 @@ public class ArrayBasedQueue<T> implements Queue<T> {
    * Create a new queue that holds up to capacity elements.
    */
   @SuppressWarnings({"unchecked"})
-  // Handle array casting
   public ArrayBasedQueue(int capacity) throws Exception {
     if (capacity <= 0) {
       throw new Exception("Queues must have a positive capacity.");
     } // if (capacity <= 0)
-    // Yay Java! It's not possible to say new T[capacity], so
-    // we use this hack.
+    // Yay Java! It's not possible to say new T[capacity], so we use
+    // this hack and suppress warnings with the annotation above.
     this.values = (T[]) new Object[capacity];
     this.front = 0;
     this.size = 0;

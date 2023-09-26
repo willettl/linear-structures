@@ -63,7 +63,7 @@ public class LinkedQueue<T> implements Queue<T> {
   @Override
   public T get() throws Exception {
     if (this.isEmpty()) {
-      throw new Exception("empty");
+      throw new Exception("cannot get values from the empty queue");
     } // if empty
     throw new Exception("Unimplemented");
   } // get()

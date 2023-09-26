@@ -13,8 +13,7 @@ public interface LinearStructure<T> extends Iterable<T> {
    *
    * @param val the value to add.
    * @pre !this.isFull()
-   * @post The element has been added to the structure. At some point, a call to get() will remove
-   *       the element.
+   * @post The element has been added to the structure. 
    * @exception Exception If the structure is full.
    */
   public void put(T val) throws Exception;

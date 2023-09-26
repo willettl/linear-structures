@@ -35,8 +35,8 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
   // +--------------+
 
   /**
-   * Create a new priority queue that holds up to capacity elements and uses order to compare
-   * elements.
+   * Create a new priority queue that holds up to `capacity` elements and 
+   * uses `order` to compare elements.
    */
   @SuppressWarnings({"unchecked"})
   // Handle array casting
@@ -45,7 +45,7 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
       throw new Exception("Queues must have a positive capacity.");
     } // if (capacity <= 0)
     // Yay Java! It's not possible to say new T[capacity], so
-    // we use this hack.
+    // we use this hack and suppress warnings (see annotation)..
     this.values = (T[]) new Object[capacity];
     this.order = order;
     this.size = 0;
@@ -97,8 +97,8 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
 
   @Override
   /**
-   * Build an iterator that returns the values of the priority queue, but not necessarily in
-   * priority order.
+   * Build an iterator that returns the values of the priority queue, 
+   * but not necessarily in priority order.
    */
   public Iterator<T> iterator() {
     return new Iterator<T>() {

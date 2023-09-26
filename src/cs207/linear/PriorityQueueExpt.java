@@ -14,7 +14,7 @@ public class PriorityQueueExpt {
    */
   public static void main(String[] args) throws Exception {
     // Build a comparator that compares two strings by length.
-    Comparator<String> cs = new Comparator<String>() {
+    Comparator<String> compareLengths = new Comparator<String>() {
       @Override
       public int compare(String s1, String s2) {
         int l1 = s1.length();
@@ -32,8 +32,8 @@ public class PriorityQueueExpt {
     PriorityQueue<String> pq;
     // Uncomment one of the following to choose the kind of
     // priority queue.
-    pq = new BuiltinPriorityQueue<String>(8, cs);
-    // pq = new ArrayBasedPriorityQueue<String>(8, cs);
+    pq = new BuiltinPriorityQueue<String>(8, compareLengths);
+    // pq = new ArrayBasedPriorityQueue<String>(8, compareLengths);
 
     ReportingLinearStructure<String> expt = new ReportingLinearStructure<String>(pq, "expt");
 
@@ -71,7 +71,8 @@ public class PriorityQueueExpt {
      */
 
     /*
-     * // An iteration test, once we've worked out some kinks 
+     * // An iteration test, once we've worked out some kinks. (Who is
+     * // the other one?
      * expt.put("eight"); 
      * expt.put("nine");
      * expt.put("ten"); 

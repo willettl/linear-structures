@@ -33,8 +33,8 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
   // +--------------+
 
   /**
-   * Build a new experiment that uses ls to do the work and prints comments using pen, prefixed by
-   * prefix.
+   * Build a new experiment that uses `ls` to do the work and prints comments 
+   * using `pen`, with each comment prefixed by `prefix`.
    */
   public ReportingLinearStructure(LinearStructure<T> ls, PrintWriter pen, String prefix) {
     this.ls = ls;
@@ -43,16 +43,16 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
   } // ReportingLinearStructure(LinearStructure<T>, PrintWriter)
 
   /**
-   * Build a new experiment that uses ls to do the real work and prints comments to stdout using the
-   * specified prefix.
+   * Build a new experiment that uses ls to do the real work and prints 
+   * comments to stdout using the specified prefix.
    */
   public ReportingLinearStructure(LinearStructure<T> ls, String prefix) {
     this(ls, new PrintWriter(System.out, true), prefix);
   } // ReportingLinearStructure(LinearStructure<T>)
 
   /**
-   * Build a new experiment that uses ls to do the real work and prints comments to stdout using no
-   * prefix.
+   * Build a new experiment that uses ls to do the real work and prints 
+   * comments to stdout using no prefix.
    */
   public ReportingLinearStructure(LinearStructure<T> ls) {
     this(ls, new PrintWriter(System.out, true), "");
@@ -65,6 +65,7 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
   @Override
   public void put(T val) throws Exception {
     pen.print(prefix + "put(" + val + ") ");
+    pen.flush();
     try {
       ls.put(val);
     } catch (Exception e) {
@@ -76,6 +77,7 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
   @Override
   public T get() throws Exception {
     pen.print(prefix + "get() = ");
+    pen.flush();
     try {
       T result = ls.get();
       pen.println(result);
@@ -89,6 +91,7 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
   @Override
   public T peek() throws Exception {
     pen.print(prefix + "peek() = ");
+    pen.flush();
     try {
       T result = ls.peek();
       pen.println(result);

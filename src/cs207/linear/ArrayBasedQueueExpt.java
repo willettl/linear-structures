@@ -1,7 +1,7 @@
 package cs207.linear;
 
 /**
- * A really simple experiment with ArrayBasedQueues.
+ * A very simple experiment with ArrayBasedQueues.
  *
  * @author Samuel A. Rebelsky.
  */
@@ -27,7 +27,8 @@ public class ArrayBasedQueueExpt {
     expt.peek();
     expt.get();
     expt.get();
-    // We've put and removed the same number of elements, it
+
+    // We've put and get the same number of elements, it
     // should be empty
     expt.isEmpty();
 
@@ -48,7 +49,7 @@ public class ArrayBasedQueueExpt {
     */
 
     /*
-    // An iteration test, once we've workd out some kinks (Ray?)
+    // An iteration experiment, once we've workd out some kinks (Ray?)
     expt.put("a");
     expt.put("b");
     expt.put("c");

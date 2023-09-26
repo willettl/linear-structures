@@ -5,8 +5,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Priority queues implemented with the standard Java Priority Queues. (I'd call this an adapter
- * class, but it's implemented by delegating all of the methods.)
+ * Priority queues implemented with the standard Java Priority Queues. 
+ * (I'd call this an adapter class, but it's implemented by delegating 
+ * most of the methods.)
  *
  * @author Samuel A. Rebelsky
  * @author Your Name Here
@@ -26,8 +27,8 @@ public class BuiltinPriorityQueue<T> implements PriorityQueue<T> {
   // +--------------+
 
   /**
-   * Create a new priority queue that holds up to capacity elements and uses order to compare
-   * elements.
+   * Create a new priority queue that holds up to capacity elements and 
+   * uses order to compare elements.
    */
   public BuiltinPriorityQueue(int capacity, Comparator<T> order) throws Exception {
     this.pq = new java.util.PriorityQueue<T>(capacity, order);

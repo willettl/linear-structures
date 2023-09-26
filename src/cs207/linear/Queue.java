@@ -24,7 +24,8 @@ public interface Queue<T> extends LinearStructure<T> {
    * @return val, a value.
    * @pre !this.isEmpty()
    * @post The structure contains one fewer copy of val.
-   * @post Every element that remains in the queue was added more recently than val.
+   * @post Every element that remains in the queue was added more 
+           recently than val.
    * @exception Exception If the structure is empty.
    */
   public T get() throws Exception;

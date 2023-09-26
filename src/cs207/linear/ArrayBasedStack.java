@@ -32,7 +32,6 @@ public class ArrayBasedStack<T> implements Stack<T> {
    * Create a new stack that holds up to capacity elements.
    */
   @SuppressWarnings({"unchecked"})
-  // Handle array casting
   public ArrayBasedStack(int capacity) throws Exception {
     if (capacity <= 0) {
       throw new Exception("Stacks must have a positive capacity.");
