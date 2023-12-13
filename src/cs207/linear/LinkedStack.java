@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A simple array-based stack.
+ * A simple linked implementation of stacks.
  *
  * @author Samuel A. Rebelsky
  * @author Your Name Here
