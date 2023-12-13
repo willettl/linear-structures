@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A simple array-based stack.
+ * Queues implemented as linked structures.
  *
  * @author Samuel A. Rebelsky
  * @author Your Name Here
