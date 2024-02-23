@@ -65,6 +65,7 @@ public class ArrayBasedStack<T> implements Stack<T> {
       throw new Exception("full");
     } // if full
     this.size++;
+    this.values[this.size -1] = val; //need to actually add the value
   } // put(T)
 
   @Override
@@ -72,7 +73,10 @@ public class ArrayBasedStack<T> implements Stack<T> {
     if (this.isEmpty()) {
       throw new Exception("empty");
     } // if empty
-    return values[--size];
+    T got = this.values[--size];
+    this.size--; //needed to actually remove the object
+    this.values[size] = null;
+    return got;
   } // get()
 
   @Override
