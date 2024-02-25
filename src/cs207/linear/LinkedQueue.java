@@ -55,17 +55,26 @@ public class LinkedQueue<T> implements Queue<T> {
     return this.front.value;
   } // peek()
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   @Override
   public void put(T val) throws Exception {
-    throw new Exception("Unimplemented");
-  } // put(T)
+    if (this.front == null) {
+        this.front = new Node(val,null);
+        this.back = this.front;
+    } else {
+        this.back.next = new Node(val,null);
+        this.back = this.back.next;
+    }
+} // put(T)
 
   @Override
   public T get() throws Exception {
     if (this.isEmpty()) {
       throw new Exception("cannot get values from the empty queue");
     } // if empty
-    throw new Exception("Unimplemented");
+    T val = this.front.value;
+    this.front = this.front.next;
+    return val;
   } // get()
 
   @Override
