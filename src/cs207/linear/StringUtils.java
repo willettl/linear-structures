@@ -18,31 +18,24 @@ public class StringUtils {
    * @throws Exception 
    */
   public static boolean checkMatching(String str) throws Exception {
-    Stack<Character> parens = new LinkedStack<Character>();
-    
+    Stack<Character> parens = new LinkedStack<Character>();  
     for(int i=0;i<str.length();i++){
       char strLinked = str.charAt(i);
-      if(strLinked=='('||strLinked=='['){
+      if (strLinked == '(' || strLinked == '[') {
         parens.push(strLinked);
-      }
-      if(strLinked==')' ){
-        if(parens.peek()=='('){
-        parens.pop();
-        }else{
-          throw new Exception("Mismatched ");
+    } else if (strLinked == ')' || strLinked == ']') {
+        if (parens.isEmpty()) {
+            return false; // Mismatch: no opening character on stack
         }
-      } else{
-        
-      }
-
-     if(strLinked==']'&& parens.peek()=='['){
-        parens.pop();
-      }else{
-        throw new Exception("Mismatched ");
-      }
+        char opening = parens.pop();
+        if ((strLinked == ')' && opening != '(') || (strLinked == ']' && opening != '[')) {
+            return false; // Mismatch: closing character doesn't match opening character
+        }
     }
-    return false;       // STUB
-  } // checkMatching
+}
+
+return parens.isEmpty(); // If stack is empty, all opening characters were matched
+}
 
   // +-------------+-------------------------------------------------
   // | Experiments |
